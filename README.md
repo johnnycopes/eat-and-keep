@@ -14,4 +14,7 @@ _more details coming soon_
 
 #### Local installation:
 
-_more details coming soon_
+1. Create a new folder
+2. Clone this repo and the project's back-end repo into the new folder (keep them separated)
+3. Install all dependencies for both projects individually by running `npm install` in each folder
+4. Navigate into this project's folder via your CLI and boot the project with `npm start`
