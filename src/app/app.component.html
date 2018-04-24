@@ -1,6 +1,14 @@
 <div class="container">
-  <h1>{{title}}</h1>
+  <header>
+    <h1>{{title}}</h1>
+    <div>
+      <a routerLink="register">Register</a>
+      <a routerLink="login">Log In</a>
+      <a style="cursor: pointer" (click)="onLogout()">Log Out</a>
+    </div>
+  </header>
   call to test route: {{places}}
-  <br>
-  <router-outlet></router-outlet>
+  <div style="margin-top: 20px;">
+    <router-outlet></router-outlet>
+  </div>
 </div>

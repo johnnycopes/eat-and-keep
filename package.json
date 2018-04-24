@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"cd ../eat-and-keep-api && npm run watch\" \"cd ../eat-and-keep-client && ng serve --open --proxy-config proxy.config.json\"",
+    "start": "concurrently \"kill-others\" \"cd ../eat-and-keep-api && npm run watch\" \"cd ../eat-and-keep-client && ng serve --open --proxy-config proxy.config.json\"",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",

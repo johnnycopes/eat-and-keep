@@ -1,25 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+
+import { AuthService } from './auth/auth.service';
 import { PlaceService } from './places/place.service';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss'],
-	providers: [ PlaceService ]
+	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
 	title = 'Eat & Keep';
-	places: any;
 
-	constructor(private placeService: PlaceService) { }
+	constructor(
+    private authService: AuthService,
+    private placeService: PlaceService
+  ) { }
 
 	ngOnInit() {
-		console.log('hey');
-		this.getPlaces();
 	}
 
-	getPlaces(): void {
-		this.placeService.getPlaces()
-			.subscribe(places => this.places = places);
-	}
+	// getPlaces(): void {
+	// 	this.placeService.getPlaces()
+	// 		.subscribe(places => this.places = places);
+  // }
+
+  onLogout(): void {
+    this.authService.logout()
+      .subscribe(response => console.log(response));
+  }
 }
